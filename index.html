@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets\css\style.css">
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <!-- ChartJS -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.umd.js"></script>
+
+    <title>BDDP</title>
+
+</head>
+
+<body>
+    <header style="color:rgb(255, 255, 255); background-color: rgba(86, 148, 203, 0.442); padding-bottom: 1em; margin-bottom: 1em">
+        <h2>
+            Base de datos de Pozos
+        </h2>
+    </header>
+
+    <main>
+        <div id="container">
+
+            <article id="registro" class="box">
+                
+            <div id="reg-pozos">
+
+                <h3>Registrar pozos</h3>
+                
+                <form id="add-pozo" method="post" action="assets/php/insertar-pozo.php">
+
+                    <div id="pozo-campos">
+
+                        <label for="nombre_pozo" class="form-label">Nombre del pozo</label>
+                        <input id="nombre_pozo" type="text" class="form-control" placeholder="Nombre" name="Nombre" oninput="validarNombre('nombre_pozo')">
+
+                        <label for="estados" class="form-label">Estado del pozo</label>
+                        <select id="estados" class="form-select" aria-label="Default select example" name="Estado">
+                            <option selected>-Seleccionar-</option>
+                        </select>
+                        
+                        <div id="pozo-botones" class="col-2">
+                            <button id="submit-pozo" class="btn btn-primary" type="submit">Añadir pozo</button>
+                            
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            <div id="reg-med">
+                <h3>Registrar mediciones</h3>
+                <form id="add-medicion" method="post" action="assets/php/insertar-medicion.php">
+                    
+                    <div class="input-group flex-column">
+
+                        <div id="row1">
+                            <!-- Se llena con todos los estados. -->
+                            <label  class="label_medida" for="estados-mediciones" class="form-label">Estado del pozo</label>
+                            <select id="estados-mediciones" class="form-select" aria-label="Default select example">
+                                <option selected>-Seleccionar-</option>
+                            </select>
+                                
+                            <!-- Conseguir ids de pozos dentro del estado correspondiente, llenar lista con los nombres correspondientes a cada id-->
+                            <label  class="label_medida" for="nombre_pozo2" class="form-label">Nombre del pozo</label>
+                            <select id="nombre_pozo2" class="form-select" name="nombre_pozo2"
+                                aria-label="Default select example">
+                                <option selected>-Seleccionar-</option>
+                            </select>
+                        </div>
+
+                        <div id="row2">
+
+                            <label class="label_medida" for="hora_medida">Hora de la medición</label>
+                            <input type="datetime-local" id="hora_medida" class="campos-registro" name="hora_medida" value="" min="1914-07-31T00:00">
+                        
+                            <label class="label_medida" for="presion" class="form-label">Presión registrada</label>
+                            <input id="presion" type="number" class="campos-registro" placeholder="PSI" name="psi">
+                            
+                            <div class="col-2">
+                                <button id="submit-medicion" class="btn btn-primary" type="submit">Añadir medida</button>
+                                <button class="btn btn-danger" type="reset">Reiniciar</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+            </article>
+
+            <article id="graph-info" class="box">
+                <h3>Pozos en el estado</h3>
+                <label for="info-estados">Estado: </label>
+                    <select id="info-estados">
+                        <option selected>-Seleccionar-</option>
+                    </select>
+
+                
+                    <div id="graph-div">
+                        <h3>Gráfico</h3>
+                        <canvas id="info-chart">
+                    </div>
+                            
+                </canvas>
+            </article>
+            
+            <article id="detalle-pozo" class="box">
+                <h3>Detalles del pozo</h3>                
+                <label for="info-pozos">Seleccionar pozo a detallar: </label>
+                <select id="info-pozos">
+                    <option selected>-Seleccionar-</option>
+                </select>
+                <br>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Índice</th>
+                            <th scope="col">Presión</th>
+                            <th scope="col">Fecha y hora</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-body">
+                        <h6>
+                            Primero escoja un estado en la sección de pozos en el estado y luego seleccione dentro de esta misma sección el pozo que desee detallar.
+                        </h6>
+                    </tbody>
+                </table>
+            </article>
+        </div>
+    </main>
+
+    <footer style="color:rgb(255, 255, 255); background-color: rgba(86, 148, 203, 0.442); padding:1em; margin-top:1em">
+        <h2>
+            Hecho por Carlos Gutiérrez
+        </h2>
+    </footer>
+
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="./assets/js/index.js"></script>
+</body>
+
+</html>

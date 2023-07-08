@@ -1,0 +1,160 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+html{
+    padding:0;
+}
+
+body{
+    background-image: url('../imgs/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+h2{
+    padding-top:2.5%;
+    justify-content: center;
+    text-align: center;
+}
+
+h3{
+    padding-top:2.5%;
+    padding-bottom: 2.5%;
+    justify-content: center;
+    text-align: center;
+    color: #3098de;
+}
+
+#container{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#registro{
+    /* background-color: yellow; */
+    display:flex;
+    flex-direction: row;
+
+    width: 100%;
+    padding-top:2.5%;
+    padding-bottom:2.5%;
+    margin-left: 2.5%;
+    padding-left: 5%;
+    margin-right: 2.5%;
+    padding-right: 5%;
+}
+
+.box{
+    background: #fff;
+    font-size: 1.4em;
+    line-height: 30px;
+    font-weight: bold;
+    color: #81acbb;
+    padding: 40px;
+    box-shadow:
+        inset #009688 0 0 0 5px, 
+      inset #059c8e 0 0 0 1px, 
+      inset #0cab9c 0 0 0 10px, 
+      inset #1fbdae 0 0 0 11px, 
+      inset #8ce9ff 0 0 0 16px, 
+      inset #48e4d6 0 0 0 17px, 
+      inset #e5f9f7 0 0 0 21px, 
+      inset #bfecf7 0 0 0 22px;
+    text-shadow: 3px 3px 1px #bfecf7;
+  }
+
+#reg-pozos{
+    width:50%;
+}
+
+#pozo-campos{
+    display:flex;
+    flex-direction: column;
+    padding-left:25%;
+}
+#nombre_pozo{
+    width: 50%;
+    height: 3em;
+}
+#estados{
+    width: 50%;
+    height: 3em;
+}
+
+#submit-pozo{
+    margin: 2em;
+}
+
+#reset-pozo{
+    margin-left:2em;
+}
+
+#row1{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#estado-mediciones{
+    width:50%;
+    height: 3em
+}
+
+#nombre-pozos{
+    width:50%;
+    height: 3em
+}
+
+#row2{
+    padding-top:2em;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#reg-med{
+    width:50%;
+}
+
+#hora_medida{
+    font-size: 12px;
+}
+.label_medida{
+    font-size:18px;
+    width: 20%;
+    text-align: center;
+}
+
+#graph-info{
+    /* background-color: cyan; */
+    width: 60%;
+    height: 50%;
+    margin-left: 2.5%;
+    padding-left: 5%;
+    
+    padding-right: 5%;
+}
+
+#graph-div{
+    height: 100%;
+}
+
+#info-chart{
+    height: 100%;
+}
+
+#detalle-pozo{
+    /* background-color: red; */
+    width: 35%;
+    
+    padding-left: 5%;
+    margin-right: 2.5%;
+    padding-right: 5%;
+}
+
+.campos-registro{
+    width: 25%;
+}
